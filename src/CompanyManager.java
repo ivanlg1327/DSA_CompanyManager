@@ -11,3 +11,4 @@ public interface CompanyManager {
     public List<Employee> employees(String company);
     public List<Company> findAllCompanies();
 }
+

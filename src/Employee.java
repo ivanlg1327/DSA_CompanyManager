@@ -4,5 +4,13 @@ public class Employee {
     String surname;
     Date birthday;
     double salary;
-    String companyName;
+    // String companyName;
+
+    public Employee(String name, String surname, Date birthday, double salary) {
+        this.name = name;
+        this.surname = surname;
+        this.birthday = birthday;
+        this.salary = salary;
+        // this.companyName = companyName;
+    }
 }
