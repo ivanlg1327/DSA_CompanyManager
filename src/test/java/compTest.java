@@ -18,8 +18,15 @@ public class compTest {
         list.add(paco);
         list.add(pepe);
         Company quiebra= new Company("Quiebra","Hace quebrar otras empresas",list);
-       // HMAPCompany prueba=new HMAPCompany(String,Company);
-     //   prueba.
+        HashMap<String, Company> companies = new HashMap<String, Company>();
+        HMAPCompany prueba=new HMAPCompany(companies);
+        prueba.putCompany("1A", quiebra);
+
+    }
+
+    @Test
+    public void testSuma() {
+
 
     }
 

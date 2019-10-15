@@ -18,7 +18,7 @@ public class HMAPCompany {
     //private HashMap<String, Company> compa = new HashMap<String, Company>();
 
 
-    private void putCompany(String id, Company comp){
+    public void putCompany(String id, Company comp){
         log.info("nova companyia: "+comp);
 
         companies.put(id,comp);
@@ -27,9 +27,9 @@ public class HMAPCompany {
         Company company = companies.get(id);
         log.info("retornem: "+ company);
         int i=0;
-        if (i==1) {
+       /* if (i==1) {
           log.warn(" xxx" );
-         }
+         }*/
 
         return company;
     }
