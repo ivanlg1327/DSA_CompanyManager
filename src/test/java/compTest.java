@@ -7,8 +7,6 @@ import java.util.List;
 
 public class compTest {
 
-
-
     @Before
     public void setUp() {
         List<Employee> list=new ArrayList<Employee>() ;
