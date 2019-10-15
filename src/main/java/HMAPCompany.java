@@ -5,12 +5,19 @@ import org.apache.log4j.Logger;
 
 public class HMAPCompany {
 
+
+
     HashMap<String, Company> companies = new HashMap<String, Company>();
 
     public Logger log;
-    public HMAPCompany(HashMap<String, Company> compa) {
-        companies = compa;
+    public HMAPCompany(HashMap<String, Company> companies) {
+        this.companies = companies;
     }
+
+
+    //private HashMap<String, Company> compa = new HashMap<String, Company>();
+
+
     private void putCompany(String id, Company comp){
         log.info("nova companyia: "+comp);
 
