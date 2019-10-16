@@ -18,4 +18,12 @@ public class Company implements Comparator {
     public int compare(Object o, Object t1) {
         return 0;
     }
+
+    public String getCompanyName() {
+        return this.companyName;
+    }
+
+    public String toString() {
+        return this.companyName;
+    }
 }

@@ -1,17 +1,18 @@
 import java.util.*;
 
+import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 
-public class HMAPCompany {
+public class HMAPCompany { //implements CompanyManager
 
 
 
     HashMap<String, Company> companies = new HashMap<String, Company>();
 
-    public Logger log;
-    public HMAPCompany(HashMap<String, Company> companies) {
-        this.companies = companies;
+    public Logger log = LogManager.getLogger(HMAPCompany.class);
+    public HMAPCompany() {
+        this.companies = new HashMap<String, Company>();;
     }
 
 
@@ -23,13 +24,15 @@ public class HMAPCompany {
 
         companies.put(id,comp);
     }
-    private Company getCompany(String id) {
+    public Company getCompany(String id) {
         Company company = companies.get(id);
         log.info("retornem: "+ company);
-        int i=0;
-       /* if (i==1) {
+        int i=1;
+        if (i==1) {
           log.warn(" xxx" );
-         }*/
+            log.error(" yyyy" );
+            log.fatal(" zzzzz" );
+        }
 
         return company;
     }
