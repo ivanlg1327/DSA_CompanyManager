@@ -4,7 +4,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 
-public class HMAPCompany { //implements CompanyManager
+public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
 
 
@@ -21,9 +21,34 @@ public class HMAPCompany { //implements CompanyManager
 
     public void putCompany(String id, Company comp){
         log.info("nova companyia: "+comp);
-
         companies.put(id,comp);
     }
+
+    @Override
+    public void addEmployee(String name, String surname, Date birthday, double salary, String companyName) {
+
+    }
+
+    @Override
+    public List<Employee> findAllEmployeesOrderedByName() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> findAllEmployeesOrderedBySalary() {
+        return null;
+    }
+
+    @Override
+    public List<Employee> employees(String company) {
+        return null;
+    }
+
+    @Override
+    public List<Company> findAllCompanies() {
+        return null;
+    }
+
     public Company getCompany(String id) {
         Company company = companies.get(id);
         log.info("retornem: "+ company);
@@ -32,6 +57,10 @@ public class HMAPCompany { //implements CompanyManager
           log.warn(" xxx" );
             log.error(" yyyy" );
             log.fatal(" zzzzz" );
+        }
+        else
+        {
+            log.error("La empresa no existe" );
         }
 
         return company;

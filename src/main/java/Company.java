@@ -14,6 +14,7 @@ public class Company implements Comparator {
         this.employeeList = employeeList;
     }
 
+
     @Override
     public int compare(Object o, Object t1) {
         return 0;
