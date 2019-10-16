@@ -37,11 +37,11 @@ public class HMAPCompany { //implements CompanyManager
         return company;
     }
 
-    private Company deleteCompany(String Id){
+    public Company deleteCompany(String Id){
         return companies.remove(Id);
     }
 
-    private int companyCount(){
+    public int companyCount(){
         return companies.size();
     }
 

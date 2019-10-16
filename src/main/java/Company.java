@@ -4,9 +4,9 @@ import java.util.Date;
 import java.util.List;
 
 public class Company implements Comparator {
-    String companyName;
-    String description;
-    List <Employee> employeeList;
+    private String companyName;
+    private String description;
+    private List <Employee> employeeList;
 
     public Company(String companyName, String description, List<Employee> employeeList) {
         this.companyName = companyName;
