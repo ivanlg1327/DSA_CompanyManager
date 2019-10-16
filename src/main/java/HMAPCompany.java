@@ -16,7 +16,7 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     }
 
 
-    //private HashMap<String, Company> compa = new HashMap<String, Company>();
+
 
 
     public void putCompany(String id, Company comp){
@@ -25,7 +25,10 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     }
 
     @Override
-    public void addEmployee(String name, String surname, Date birthday, double salary, String companyName) {
+    public void addEmployee(String name, String surname, Date birthday, double salary, String id) {
+        Employee employee= new Employee(name,surname,birthday,salary);
+        Company aux =getCompany(id);
+        aux.addEmplo(employee);
 
     }
 
@@ -52,16 +55,16 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     public Company getCompany(String id) {
         Company company = companies.get(id);
         log.info("retornem: "+ company);
-        int i=1;
+        int i=0;
         if (i==1) {
           log.warn(" xxx" );
             log.error(" yyyy" );
             log.fatal(" zzzzz" );
         }
-        else
+       /* else
         {
             log.error("La empresa no existe" );
-        }
+        }*/
 
         return company;
     }

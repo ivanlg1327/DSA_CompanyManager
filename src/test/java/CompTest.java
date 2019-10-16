@@ -23,6 +23,7 @@ public class CompTest {
         //prueba.addEmployee("Juan", rst, date, 3);
 
         prueba.putCompany("1A", quiebra);
+        prueba.addEmployee("James","Bond",date,2,"1A");
 
     }
 
