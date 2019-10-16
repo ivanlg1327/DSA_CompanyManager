@@ -13,4 +13,7 @@ public class Employee {
         this.salary = salary;
         // this.companyName = companyName;
     }
+    public String toString() {
+        return this.name;
+    }
 }

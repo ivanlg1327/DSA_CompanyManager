@@ -9,6 +9,9 @@ import org.apache.log4j.Logger;
 public class Company implements Comparator {
     private String companyName;
     private String description;
+
+
+
     private List <Employee> employeeList;
     public Logger log = LogManager.getLogger(HMAPCompany.class);
 
@@ -29,6 +32,9 @@ public class Company implements Comparator {
 
     public String getCompanyName() {
         return this.companyName;
+    }
+    public List<Employee> getEmployeeList() {
+        return employeeList;
     }
 
     public String toString() {

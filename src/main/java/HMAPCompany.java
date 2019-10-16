@@ -1,5 +1,5 @@
 import java.util.*;
-
+import java.util.HashMap;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
@@ -11,6 +11,7 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     HashMap<String, Company> companies = new HashMap<String, Company>();
 
     public Logger log = LogManager.getLogger(HMAPCompany.class);
+    public List<Company> companyList=new ArrayList<Company>(); ;
     public HMAPCompany() {
         this.companies = new HashMap<String, Company>();;
     }
@@ -34,6 +35,7 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
     @Override
     public List<Employee> findAllEmployeesOrderedByName() {
+
         return null;
     }
 
@@ -44,12 +46,19 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
     @Override
     public List<Employee> employees(String company) {
-        return null;
+        Company compa = companies.get(company);
+        log.info(compa.getEmployeeList());
+        return compa.getEmployeeList();
     }
 
     @Override
     public List<Company> findAllCompanies() {
-        return null;
+
+        for (String i : companies.keySet()) {
+             companyList.add(companies.get(i));
+        }
+        log.info(companyList);
+        return companyList;
     }
 
     public Company getCompany(String id) {
