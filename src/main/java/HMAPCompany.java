@@ -6,8 +6,6 @@ import org.apache.log4j.Logger;
 
 public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
-
-
     HashMap<String, Company> companies = new HashMap<String, Company>();
     List<Employee> employeeList ;
 
@@ -37,9 +35,17 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     }
 
     @Override
-    public List<Employee> findAllEmployeesOrderedByName() {
-        Collections.sort(this.employeeList);
+    public List<Employee> findAllEmployeesOrderedByName() { //no funciona
+        Collections.sort(this.employeeList);//, new Comparator<Employee>() {
 
+
+         /*   @Override
+          public int compare(Employee employee, Employee t1) {
+              //use instanceof to verify the references are indeed of the type in question
+              return ((Employee) employeeList).name.compareTo(((Employee) employeeList).name);
+          }
+        });     */
+        log.info("orden"+this.employeeList);
         return this.employeeList;
     }
 
@@ -51,7 +57,7 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
                 return ((int)(employee.salary-t1.salary));
             }
         });
-
+        log.info("orden"+this.employeeList);
         return this.employeeList;
     }
 
@@ -97,7 +103,4 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
     public int companyCount(){
         return companies.size();
     }
-
-
-
 }

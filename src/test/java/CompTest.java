@@ -36,7 +36,8 @@ public class CompTest {
         List<Employee> list3=new ArrayList<Employee>() ;
         list3=prueba.employees("1A");
         prueba.getCompany("fallo");
-
+        prueba.findAllEmployeesOrderedByName();
+        prueba.findAllEmployeesOrderedBySalary();
     }
 
 
