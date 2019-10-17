@@ -9,11 +9,13 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
 
     HashMap<String, Company> companies = new HashMap<String, Company>();
+    List<Employee> employeeList ;
 
-    public Logger log = LogManager.getLogger(HMAPCompany.class);
-    public List<Company> companyList=new ArrayList<Company>(); ;
-    public HMAPCompany() {
-        this.companies = new HashMap<String, Company>();;
+    private Logger log = LogManager.getLogger(HMAPCompany.class);
+    private List<Company> companyList=new ArrayList<Company>(); ;
+    HMAPCompany() {
+        this.companies = new HashMap<String, Company>();
+        this.employeeList = new ArrayList<Employee>();
     }
 
 
@@ -30,18 +32,27 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
         Employee employee= new Employee(name,surname,birthday,salary);
         Company aux =getCompany(id);
         aux.addEmplo(employee);
+        this.employeeList.add(employee);
 
     }
 
     @Override
     public List<Employee> findAllEmployeesOrderedByName() {
+        Collections.sort(this.employeeList);
 
-        return null;
+        return this.employeeList;
     }
 
     @Override
     public List<Employee> findAllEmployeesOrderedBySalary() {
-        return null;
+        Collections.sort(this.employeeList, new Comparator<Employee>() {
+            @Override
+            public int compare(Employee employee, Employee t1) {
+                return ((int)(employee.salary-t1.salary));
+            }
+        });
+
+        return this.employeeList;
     }
 
     @Override
@@ -63,18 +74,19 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
 
     public Company getCompany(String id) {
         Company company = companies.get(id);
-        log.info("retornem: "+ company);
-        int i=0;
-        if (i==1) {
-          log.warn(" xxx" );
-            log.error(" yyyy" );
-            log.fatal(" zzzzz" );
-        }
-       /* else
-        {
-            log.error("La empresa no existe" );
-        }*/
 
+        int i=0;
+        if (company==null) {
+
+            log.error("La empresa "+id+" no existe" );
+        }
+        else
+        {
+            //log.info("La empresa "+ company);
+            /*log.warn(" xxx" );
+            log.error(" yyyy" );
+            log.fatal(" zzzzz" );*/
+        }
         return company;
     }
 
@@ -86,5 +98,6 @@ public class HMAPCompany implements CompanyManager { //implements CompanyManager
         return companies.size();
     }
 
-    // CRUD
+
+
 }

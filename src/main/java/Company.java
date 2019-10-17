@@ -6,7 +6,7 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
 
-public class Company implements Comparator {
+public class Company {
     private String companyName;
     private String description;
 
@@ -25,10 +25,6 @@ public class Company implements Comparator {
         log.info("El nuevo empleado de la empresa "+ this.companyName +" es "+ employee.name);
     }
 
-    @Override
-    public int compare(Object o, Object t1) {
-        return 0;
-    }
 
     public String getCompanyName() {
         return this.companyName;

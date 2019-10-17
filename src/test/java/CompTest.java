@@ -11,6 +11,7 @@ public class CompTest {
     public void setUp() {
         List<Employee> list=new ArrayList<Employee>() ;
         List<Employee> list2=new ArrayList<Employee>() ;
+        //List<Employee> list3=new ArrayList<Employee>() ;
         Date date = new GregorianCalendar(2014, Calendar.FEBRUARY, 11).getTime();
         Employee juan = new Employee("Juan", "rst", date, 3);
         Employee paco = new Employee("Paco", "reyt", date, 1);
@@ -30,8 +31,12 @@ public class CompTest {
         prueba.addEmployee("Anthony","Stark",date,20000000,"1B");
         prueba.addEmployee("Pepper","Pots",date,10000000,"1B");
         prueba.findAllCompanies();
-        prueba.employees("1A");
+
         prueba.employees("1B");
+        List<Employee> list3=new ArrayList<Employee>() ;
+        list3=prueba.employees("1A");
+        prueba.getCompany("fallo");
+
     }
 
 

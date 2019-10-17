@@ -1,5 +1,5 @@
 import java.util.Date;
-public class Employee {
+public class Employee implements Comparable {
     String name;
     String surname;
     Date birthday;
@@ -15,5 +15,10 @@ public class Employee {
     }
     public String toString() {
         return this.name;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
     }
 }
